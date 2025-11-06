@@ -20,7 +20,7 @@ internal object OpenAIConfig : ReadOnlyPluginConfig(saveName = "openai") {
 
     @ValueName("api")
     @ValueDescription("API 地址")
-    val api: String by value("https://api.deepseek.com/v1")
+    val api: String by value(System.getenv("OPENAI_API").orEmpty())
 
     @ValueName("token")
     @ValueDescription("OPENAI_TOKEN")
